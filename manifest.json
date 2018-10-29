@@ -1,45 +1,38 @@
 {
-    "manifest_version": 2,
-    "name": "SnapPay Extension Simple",
-    "version": "0.0.1",
-    "permissions": [
-        "tabs",
-        "<all_urls>",
-        "identity",
-        "declarativeContent",
-        "storage"
+  "manifest_version": 2,
+  "name": "SnapPay Extension Simple",
+  "version": "0.0.1",
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "identity",
+    "declarativeContent",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background/background.js",
+      "background/oauth.js",
+      "background/ajax.js"
     ],
-    "background": {
-        "scripts": [
-            "background/background.js",
-            "background/oauth.js",
-            "background/ajax.js"
-        ],
-        "persistent": false
-    },
-    "page_action": {
-        "default_popup": "popup.html",
-        "default_icon": "finger-snap.png"
-    },
-    "icons": {
-        "48": "snappay-48.png"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-            "js": [
-                "content_scripts/content_script.js"
-            ]
-        }
-    ],
-    "content_security_policy": "script-src 'self' 'sha256-W+NOwkZ9QdaMCfOxkd+P+WCMOo6ulUeWgwH6EC9tkoY=' https://apis.google.com; object-src 'self' 'unsafe-inline'",
-    "oauth2": {
-        "client_id": "1010579806330-invssvgknl1cipqjtsbqbll33idt2o01.apps.googleusercontent.com",
-        "scopes": [
-            ""
-        ]
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "finger-snap.png"
+  },
+  "icons": {
+    "48": "snappay-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content_scripts/content_script.js"]
     }
+  ],
+  "content_security_policy": "script-src 'self' 'sha256-W+NOwkZ9QdaMCfOxkd+P+WCMOo6ulUeWgwH6EC9tkoY=' https://apis.google.com; object-src 'self' 'unsafe-inline'",
+  "oauth2": {
+    "client_id": "1010579806330-invssvgknl1cipqjtsbqbll33idt2o01.apps.googleusercontent.com",
+    "scopes": [""]
+  }
 }
