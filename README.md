@@ -1,5 +1,4 @@
-# chrome_ext_url_detection
-
+# SnapPay_chrome
 A SnayPay chrome extension repo for url detection and OAuth2
 
 ## Data Flow
